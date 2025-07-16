@@ -45,6 +45,10 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+# ✅ Importar y registrar el blueprint con los endpoints
+from routes import api
+app.register_blueprint(api, url_prefix='/')
+
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3000))
